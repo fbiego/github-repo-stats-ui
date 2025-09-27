@@ -1,0 +1,137 @@
+<screen>
+	<styles>
+		<style name="style_main" bg_color="0x0F0F0F" />
+		<style name="style_round" width="360" height="360" radius="180" bg_color="0x161616" border_width="0" />
+		<style
+			name="style_time"
+			width="198"
+			height="76"
+			radius="38"
+			bg_color="0x171717"
+			border_width="0"
+			text_font="sp_elite_64"
+			text_color="0x9AE98A"
+			pad_all="0"
+		/>
+		<style
+			name="style_stats"
+			width="content"
+			height="content"
+			pad_all="0"
+			pad_row="0"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_track_place="center"
+			flex_cross_place="center"
+			bg_opa="0"
+			text_font="montserrat_semibold_19"
+			text_color="0xF5F5F5"
+			border_width="0"
+		/>
+
+		<style
+			name="style_cont"
+			layout="flex"
+			bg_opa="0"
+			border_width="0"
+			height="content"
+			width="content"
+			pad_all="0"
+		/>
+
+		<style
+			name="style_arc"
+			width="466"
+			height="466"
+			transform_pivot_x="233"
+			transform_pivot_y="233"
+			transform_rotation="-900"
+			arc_width="55"
+			arc_color="0x045A7C"
+		/>
+		<style name="style_indicator" arc_width="55" arc_color="0x24EAA2" />
+		<style name="style_knob" bg_opa="0" />
+	</styles>
+	<view extends="lv_obj" scrollable="false">
+		<style name="style_main" />
+
+		<lv_obj x="-228" align="left_mid">
+			<style name="style_round" />
+		</lv_obj>
+
+		<lv_obj x="228" align="right_mid">
+			<style name="style_round" />
+		</lv_obj>
+
+		<lv_obj y="110" align="top_mid" scrollable="false">
+			<style name="style_time" />
+			<lv_label align="center" text="10:10" bind_text="subject_time" />
+		</lv_obj>
+
+		<lv_obj align="top_mid" width="150" y="80" style_flex_main_place="space_between">
+			<style name="style_cont" />
+			<lv_label text="Fri 26" bind_text="subject_date" style_text_font="sf_pro_20" style_text_color="0x9AE98A" />
+			<lv_image src="wifi_icon">
+				<bind_flag_if_eq subject="subject_wifi" ref_value="0" flag="hidden" />
+			</lv_image>
+		</lv_obj>
+
+		<lv_image src="github_logo" align="center" y="10" />
+
+		<lv_obj x="60" align="left_mid">
+			<style name="style_stats" />
+			<lv_label text="100" bind_text="subject_issues" style_text_color="0x24EAA2" style_text_font="sf_pro_24" />
+			<lv_label text="Issues" />
+		</lv_obj>
+
+		<lv_obj x="-70" align="right_mid">
+			<style name="style_stats" />
+			<lv_label text="100" bind_text="subject_prs" style_text_color="0x24EAA2" style_text_font="sf_pro_24" />
+			<lv_label text="PRs" />
+		</lv_obj>
+
+		<lv_label
+			text="Smart Watch App"
+			bind_text="subject_name"
+			y="300"
+			align="top_mid"
+			style_text_font="montserrat_semibold_23"
+			style_text_color="0xF5F5F5"
+		/>
+		<lv_obj
+			align="top_mid"
+			width="content"
+			y="330"
+			style_flex_main_place="center"
+			style_flex_cross_place="center"
+			style_pad_column="0"
+		>
+			<style name="style_cont" />
+			<lv_image src="star_icon" />
+			<lv_label
+				text="100"
+				bind_text="subject_stars"
+				style_text_font="sf_pro_40"
+				style_text_color="0xF5F5F5"
+				style_pad_top="5"
+			/>
+		</lv_obj>
+
+		<lv_arc
+			name="stats_arc"
+			bg_start_angle="0"
+			bg_end_angle="360"
+			mode="reverse"
+			value="40"
+			bind_value="subject_issues"
+			clickable="false"
+		>
+			<style name="style_arc" />
+			<style name="style_indicator" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_arc>
+
+		<lv_image src="overlay" style_opa="150" />
+	</view>
+</screen>

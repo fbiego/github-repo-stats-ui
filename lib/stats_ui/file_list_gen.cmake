@@ -1,0 +1,17 @@
+list(
+  APPEND
+  PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/screens/main_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/stats_ui_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/ui.c
+  ${CMAKE_CURRENT_LIST_DIR}/stats_ui.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/montserrat_semibold_19_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/montserrat_semibold_23_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/sp_elite_64_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_20_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_24_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_40_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/star_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/wifi_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/github_logo_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/overlay_data.c)

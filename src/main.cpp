@@ -33,8 +33,23 @@
 #include <Arduino.h>
 
 #include "main.h"
+#include "ui.h"
+
+#include <WiFi.h>
+#include <WiFiMulti.h>
+#include <HTTPClient.h>
+#include <ESP32Time.h>
+#include <ArduinoJson.h>
+
+WiFiMulti wifiMulti;
+ESP32Time rtc(3600 * 3);
+
 
 uint8_t lv_buffer[2][LV_BUFFER_SIZE];
+
+int total_issues = 0;
+
+lv_obj_t *stats_arc;
 
 lv_display_rotation_t get_rotation(uint8_t rotation)
 {
@@ -117,6 +132,73 @@ void my_touchpad_read(lv_indev_t *indev_driver, lv_indev_data_t *data)
   }
 }
 
+bool updateTime()
+{
+  bool state = false;
+  HTTPClient http;
+  http.begin("https://iot.fbiego.com/api/v1/time");
+  int httpCode = http.GET();
+  String payload = http.getString();
+  Serial.println(payload);
+  if (httpCode == HTTP_CODE_OK)
+  {
+    DynamicJsonDocument json(512);
+    deserializeJson(json, payload);
+    rtc.setTime(json["timestamp"].as<unsigned long>());
+    state = true;
+  }
+  http.end();
+
+  return state;
+}
+
+void getRepoInfo()
+{
+  HTTPClient http;
+  http.begin("https://api.github.com/repos/lvgl/lvgl");
+  int httpCode = http.GET();
+  String payload = http.getString();
+  Serial.println(payload);
+  if (httpCode == HTTP_CODE_OK)
+  {
+    JsonDocument json;
+    deserializeJson(json, payload);
+
+    lv_subject_copy_string(&subject_name, json["full_name"].as<String>().c_str());
+    lv_subject_set_int(&subject_stars, json["stargazers_count"].as<int>());
+    total_issues = json["open_issues_count"].as<int>();
+
+  }
+  http.end();
+
+}
+
+void getIssueInfo()
+{
+  HTTPClient http;
+  http.begin("https://api.github.com/search/issues?q=repo:lvgl/lvgl%20is:issue%20is:open");
+  int httpCode = http.GET();
+  String payload = http.getString();
+  Serial.println(payload);
+  if (httpCode == HTTP_CODE_OK)
+  {
+    JsonDocument json;
+    deserializeJson(json, payload);
+
+    int issues = json["total_count"].as<int>();
+    lv_subject_set_int(&subject_issues, issues);
+    lv_subject_set_int(&subject_prs, total_issues - issues);
+
+    if (stats_arc) {
+      lv_arc_set_range(stats_arc, 0, total_issues);
+      lv_arc_set_value(stats_arc, issues);
+    }
+
+  }
+  http.end();
+
+}
+
 static uint32_t my_tick(void)
 {
   return millis();
@@ -151,6 +233,36 @@ void setup()
   lv_obj_t *label = lv_label_create(lv_screen_active());
   lv_label_set_text(label, "Hello LVGL!" );
   lv_obj_align(label, LV_ALIGN_CENTER, 0, 0 );
+
+  ui_init("");
+
+  lv_obj_t *main = main_create();
+
+  stats_arc = lv_obj_find_by_name(main, "stats_arc");
+  lv_screen_load(main);
+
+  WiFi.mode(WIFI_STA);
+  wifiMulti.addAP("WIFI", "PASSWORD");
+
+  int tries;
+  while (wifiMulti.run() != WL_CONNECTED)
+  {
+    delay(100);
+    tries++;
+    if (tries > 1000)
+    {
+      ESP.restart();
+    }
+  }
+
+  if (!updateTime())
+  {
+    updateTime();
+  }
+
+  getRepoInfo();
+
+  getIssueInfo();
   
 
 }
@@ -159,4 +271,11 @@ void loop()
 {
   lv_timer_handler(); // Update the UI-
   delay(5);
+
+  lv_subject_copy_string(&subject_time, rtc.getTime("%H:%M").c_str());
+  lv_subject_copy_string(&subject_date, rtc.getTime("%a %d").c_str());
+
+  lv_subject_set_int(&subject_wifi, WiFi.status() == WL_CONNECTED ? 1 : 0);
+
+
 }

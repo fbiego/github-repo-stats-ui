@@ -1,0 +1,89 @@
+<globals>
+	<api>
+		<!-- Add <enumdefs> here -->
+	</api>
+
+	<consts>
+		<!-- Add <px>, <int>, <color> etc here -->
+	</consts>
+
+	<styles>
+		<!-- Add <style> tags here -->
+	</styles>
+
+	<subjects>
+		<!-- Add <int>, <string>, or <float> subjects here -->
+
+		<string name="subject_time" value="10:20" />
+		<string name="subject_date" value="Sat 27" />
+		<string name="subject_name" value="Project" />
+		<int name="subject_stars" value="345" />
+		<int name="subject_prs" value="35" />
+		<int name="subject_issues" value="27" />
+		<int name="subject_wifi" value="1" />
+	</subjects>
+
+	<images>
+		<!-- Add <file> or <data> tags here -->
+
+		<data name="star_icon" src_path="images/star_icon.png" color_format="rgb565a8" />
+		<data name="wifi_icon" src_path="images/wifi_icon.png" color_format="rgb565a8" />
+		<data name="github_logo" src_path="images/github_logo.png" color_format="rgb565a8" />
+		<data name="overlay" src_path="images/frame_overlay.png" color_format="rgb565a8" />
+	</images>
+
+	<fonts>
+		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
+
+		<bin
+			name="montserrat_semibold_19"
+			src_path="fonts/Montserrat-SemiBold.ttf"
+			size="19"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="montserrat_semibold_23"
+			src_path="fonts/Montserrat-SemiBold.ttf"
+			size="23"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+
+		<bin
+			name="sp_elite_64"
+			src_path="fonts/SpecialElite-Regular.ttf"
+			size="64"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+
+		<bin
+			name="sf_pro_20"
+			src_path="fonts/SF-Pro-Text-Semibold.otf"
+			size="20"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="sf_pro_24"
+			src_path="fonts/SF-Pro-Text-Semibold.otf"
+			size="24"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="sf_pro_40"
+			src_path="fonts/SF-Pro-Text-Semibold.otf"
+			size="40"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+	</fonts>
+</globals>
