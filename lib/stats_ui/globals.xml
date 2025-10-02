@@ -30,6 +30,21 @@
 		<data name="wifi_icon" src_path="images/wifi_icon.png" color_format="rgb565a8" />
 		<data name="github_logo" src_path="images/github_logo.png" color_format="rgb565a8" />
 		<data name="overlay" src_path="images/frame_overlay.png" color_format="rgb565a8" />
+
+		<data name="star2_icon" src_path="images/star2_icon.png" color_format="rgb565a8" />
+		<data name="issue2_icon" src_path="images/issue2_icon.png" color_format="rgb565a8" />
+		<data name="pr2_icon" src_path="images/pr2_icon.png" color_format="rgb565a8" />
+
+		<data name="star3_icon" src_path="images/star3_icon.png" color_format="rgb565a8" />
+
+		<data name="star4_icon" src_path="images/stars4_icon.png" color_format="rgb565a8" />
+		<data name="pr4_icon" src_path="images/pr4_icon.png" color_format="rgb565a8" />
+		<data name="merge4_icon" src_path="images/merge4_icon.png" color_format="rgb565a8" />
+
+		<data name="main_preview" src_path="images/main_preview.png" color_format="rgb565a8" />
+		<data name="screen2_preview" src_path="images/screen2_preview.png" color_format="rgb565a8" />
+		<data name="screen3_preview" src_path="images/screen3_preview.png" color_format="rgb565a8" />
+		<data name="screen4_preview" src_path="images/screen4_preview.png" color_format="rgb565a8" />
 	</images>
 
 	<fonts>
@@ -47,6 +62,15 @@
 			name="montserrat_semibold_23"
 			src_path="fonts/Montserrat-SemiBold.ttf"
 			size="23"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+
+		<bin
+			name="montserrat_semibold_60"
+			src_path="fonts/Montserrat-SemiBold.ttf"
+			size="60"
 			bpp="4"
 			range="0x20-0x7F"
 			as_file="false"
@@ -81,6 +105,62 @@
 			name="sf_pro_40"
 			src_path="fonts/SF-Pro-Text-Semibold.otf"
 			size="40"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="inter_medium_24"
+			src_path="fonts/Inter_28pt-Medium.ttf"
+			size="24"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="inter_medium_33"
+			src_path="fonts/Inter_28pt-Medium.ttf"
+			size="33"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="inter_medium_36"
+			src_path="fonts/Inter_28pt-Medium.ttf"
+			size="36"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="inter_medium_40"
+			src_path="fonts/Inter_28pt-Medium.ttf"
+			size="40"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="inter_medium_48"
+			src_path="fonts/Inter_28pt-Medium.ttf"
+			size="48"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="bodoni_48"
+			src_path="fonts/BodoniModaSC_28pt-Bold.ttf"
+			size="48"
+			bpp="4"
+			range="0x20-0x7F"
+			as_file="false"
+		/>
+		<bin
+			name="dm_serif_15"
+			src_path="fonts/DMSerifDisplay-Regular.ttf"
+			size="25"
 			bpp="4"
 			range="0x20-0x7F"
 			as_file="false"

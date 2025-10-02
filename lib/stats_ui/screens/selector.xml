@@ -1,0 +1,25 @@
+<screen>
+	<styles>
+		<style
+			name="style_main"
+			bg_color="0x000000"
+			layout="flex"
+			flex_cross_place="center"
+			flex_track_place="center"
+			pad_all="50"
+			pad_column="50"
+		/>
+		<style name="style_cont" width="200" height="200" radius="100" />
+		<style name="style_bars" bg_opa="0" />
+	</styles>
+	<view scroll_snap_x="center">
+		<style name="style_main" />
+		<style name="style_bars" selector="scrollbar" />
+		<style name="style_bars" selector="scrollbar|scrolled" />
+
+		<!-- <item preview="main_preview" />
+		<item preview="screen2_preview" />
+		<item preview="screen3_preview" />
+		<item preview="screen4_preview" /> -->
+	</view>
+</screen>

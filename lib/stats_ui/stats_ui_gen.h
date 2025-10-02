@@ -51,6 +51,8 @@ extern lv_font_t * montserrat_semibold_19;
 
 extern lv_font_t * montserrat_semibold_23;
 
+extern lv_font_t * montserrat_semibold_60;
+
 extern lv_font_t * sp_elite_64;
 
 extern lv_font_t * sf_pro_20;
@@ -58,6 +60,20 @@ extern lv_font_t * sf_pro_20;
 extern lv_font_t * sf_pro_24;
 
 extern lv_font_t * sf_pro_40;
+
+extern lv_font_t * inter_medium_24;
+
+extern lv_font_t * inter_medium_33;
+
+extern lv_font_t * inter_medium_36;
+
+extern lv_font_t * inter_medium_40;
+
+extern lv_font_t * inter_medium_48;
+
+extern lv_font_t * bodoni_48;
+
+extern lv_font_t * dm_serif_15;
 
 /*----------------
  * Images
@@ -67,6 +83,17 @@ extern const void * star_icon;
 extern const void * wifi_icon;
 extern const void * github_logo;
 extern const void * overlay;
+extern const void * star2_icon;
+extern const void * issue2_icon;
+extern const void * pr2_icon;
+extern const void * star3_icon;
+extern const void * star4_icon;
+extern const void * pr4_icon;
+extern const void * merge4_icon;
+extern const void * main_preview;
+extern const void * screen2_preview;
+extern const void * screen3_preview;
+extern const void * screen4_preview;
 
 /*----------------
  * Subjects
@@ -88,6 +115,8 @@ extern lv_subject_t subject_wifi;
  * Event Callbacks
  *----------------*/
 
+void view_selected_cb(lv_event_t * e);
+
 /**
  * Initialize the component library
  */
@@ -103,7 +132,12 @@ void stats_ui_init_gen(const char * asset_path);
  **********************/
 
 /*Include all the widget and components of this library*/
+#include "components/item_gen.h"
 #include "screens/main_gen.h"
+#include "screens/screen2_gen.h"
+#include "screens/screen3_gen.h"
+#include "screens/screen4_gen.h"
+#include "screens/selector_gen.h"
 
 #ifdef __cplusplus
 } /*extern "C"*/

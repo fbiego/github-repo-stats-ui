@@ -8,7 +8,7 @@
  *********************/
 
 #include "main_gen.h"
-#include "ui.h"
+#include "stats_ui.h"
 
 /*********************
  *      DEFINES

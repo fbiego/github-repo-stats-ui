@@ -1,0 +1,120 @@
+<screen>
+	<styles>
+		<style name="style_main" bg_color="0x171C25" text_color="0xffffff" />
+		<style
+			name="style_stats"
+			width="content"
+			height="content"
+			pad_all="0"
+			pad_row="-10"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_track_place="center"
+			flex_cross_place="center"
+			bg_opa="0"
+			text_font="inter_medium_24"
+			text_color="0xF5F5F5"
+			border_width="0"
+		/>
+		<style
+			name="style_cont"
+			layout="flex"
+			bg_opa="0"
+			border_width="0"
+			height="content"
+			width="content"
+			pad_all="0"
+		/>
+		<style
+			name="style_arc"
+			width="466"
+			height="466"
+			transform_pivot_x="233"
+			transform_pivot_y="233"
+			transform_rotation="900"
+			arc_width="35"
+			arc_color="0xFFB84D"
+			radius="5"
+		/>
+		<style
+			name="style_indicator"
+			arc_width="35"
+			arc_color="0xFF4D6D"
+			arc_opa="200"
+			arc_rounded="false"
+			border_width="1"
+			border_color="0x000"
+		/>
+		<style name="style_knob" bg_opa="0" radius="0" />
+	</styles>
+	<view>
+		<style name="style_main" />
+
+		<lv_arc
+			name="stats_arc"
+			bg_start_angle="0"
+			bg_end_angle="360"
+			value="40"
+			bind_value="subject_issues"
+			clickable="false"
+		>
+			<style name="style_arc" />
+			<style name="style_indicator" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_arc>
+
+		<lv_label align="top_mid" text="12:34" bind_text="subject_time" style_text_font="inter_medium_48" y="68" />
+
+		<lv_label
+			y="130"
+			align="top_mid"
+			text="Fri 26"
+			bind_text="subject_date"
+			style_text_font="inter_medium_33"
+			style_opa="70%"
+		/>
+
+		<lv_image src="github_logo" align="center" />
+
+		<lv_obj x="60" align="left_mid">
+			<style name="style_stats" />
+			<lv_label text="100" bind_text="subject_issues" style_text_font="inter_medium_40" />
+			<lv_label text="ISSUES" />
+		</lv_obj>
+
+		<lv_obj x="-70" align="right_mid">
+			<style name="style_stats" />
+			<lv_label text="100" bind_text="subject_prs" style_text_font="inter_medium_40" />
+			<lv_label text="PRs" />
+		</lv_obj>
+
+		<lv_label
+			text="Smart Watch App"
+			bind_text="subject_name"
+			y="300"
+			align="top_mid"
+			style_text_font="inter_medium_33"
+			style_text_color="0xF5F5F5"
+		/>
+
+		<lv_obj
+			align="top_mid"
+			width="content"
+			y="350"
+			style_flex_main_place="center"
+			style_flex_cross_place="center"
+			style_pad_column="10"
+		>
+			<style name="style_cont" />
+			<lv_image src="star3_icon" />
+			<lv_label
+				text="100"
+				bind_text="subject_stars"
+				style_text_font="inter_medium_36"
+				style_text_color="0xF5F5F5"
+				style_pad_top="5"
+			/>
+		</lv_obj>
+	</view>
+</screen>

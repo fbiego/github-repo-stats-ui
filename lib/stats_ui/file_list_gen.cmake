@@ -1,17 +1,40 @@
 list(
   APPEND
   PROJECT_SOURCES
+  ${CMAKE_CURRENT_LIST_DIR}/components/item_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/screens/main_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen2_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen3_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/screen4_gen.c
+  ${CMAKE_CURRENT_LIST_DIR}/screens/selector_gen.c
   ${CMAKE_CURRENT_LIST_DIR}/stats_ui_gen.c
-  ${CMAKE_CURRENT_LIST_DIR}/ui.c
   ${CMAKE_CURRENT_LIST_DIR}/stats_ui.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/montserrat_semibold_19_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/montserrat_semibold_23_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/montserrat_semibold_60_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/sp_elite_64_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_20_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_24_data.c
   ${CMAKE_CURRENT_LIST_DIR}/fonts/sf_pro_40_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/inter_medium_24_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/inter_medium_33_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/inter_medium_36_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/inter_medium_40_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/inter_medium_48_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/bodoni_48_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/fonts/dm_serif_15_data.c
   ${CMAKE_CURRENT_LIST_DIR}/images/star_icon_data.c
   ${CMAKE_CURRENT_LIST_DIR}/images/wifi_icon_data.c
   ${CMAKE_CURRENT_LIST_DIR}/images/github_logo_data.c
-  ${CMAKE_CURRENT_LIST_DIR}/images/overlay_data.c)
+  ${CMAKE_CURRENT_LIST_DIR}/images/overlay_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/star2_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/issue2_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/pr2_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/star3_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/star4_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/pr4_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/merge4_icon_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/main_preview_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/screen2_preview_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/screen3_preview_data.c
+  ${CMAKE_CURRENT_LIST_DIR}/images/screen4_preview_data.c)

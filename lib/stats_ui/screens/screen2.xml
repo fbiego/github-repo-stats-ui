@@ -1,0 +1,102 @@
+<screen>
+	<styles>
+		<style name="style_main" bg_color="0x000000" />
+		<style
+			name="style_arc"
+			width="466"
+			height="466"
+			transform_pivot_x="233"
+			transform_pivot_y="233"
+			transform_rotation="-900"
+			arc_width="55"
+			arc_color="0x3E3C8D"
+			radius="5"
+		/>
+		<style
+			name="style_indicator"
+			arc_width="55"
+			arc_color="0x0DA5E9"
+			arc_opa="200"
+			arc_rounded="false"
+			border_width="1"
+			border_color="0x000"
+		/>
+		<style name="style_knob" bg_opa="0" radius="0" />
+		<style
+			name="style_cont"
+			layout="flex"
+			flex_cross_place="center"
+			bg_opa="0"
+			border_width="0"
+			height="content"
+			width="content"
+			pad_all="0"
+			text_color="0xfff"
+			text_font="montserrat_semibold_19"
+			transform_rotation="-900"
+		/>
+		<style name="style_label" bg_color="0x6E7681" bg_opa="40%" pad_all="10" radius="20" />
+	</styles>
+	<view extends="lv_obj" scrollable="false">
+		<style name="style_main" />
+
+		<lv_arc
+			name="stats_arc"
+			bg_start_angle="0"
+			bg_end_angle="360"
+			mode="reverse"
+			value="40"
+			bind_value="subject_issues"
+			clickable="false"
+		>
+			<style name="style_arc" />
+			<style name="style_indicator" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_arc>
+
+		<lv_obj align="center" x="-52" y="95" width="151" height="40">
+			<style name="style_cont" />
+			<lv_image src="issue2_icon" />
+			<lv_label text="Issues" />
+			<lv_label text="100" bind_text="subject_issues">
+				<style name="style_label" />
+			</lv_label>
+		</lv_obj>
+
+		<lv_label
+			text="20:34"
+			bind_text="subject_time"
+			align="top_mid"
+			y="100"
+			style_text_color="0xffffff"
+			style_text_font="montserrat_semibold_60"
+		/>
+
+		<lv_label
+			text="Github Repo"
+			bind_text="subject_name"
+			align="top_mid"
+			y="300"
+			style_text_color="0x333FFF"
+			style_text_font="montserrat_semibold_23"
+		/>
+
+		<lv_obj align="center" x="191" y="128">
+			<style name="style_cont" />
+			<lv_image src="pr2_icon" />
+			<lv_label text="Pull requests" />
+			<lv_label text="100" bind_text="subject_prs">
+				<style name="style_label" />
+			</lv_label>
+		</lv_obj>
+
+		<lv_image src="github_logo" align="center" />
+
+		<lv_obj align="top_mid" x="-1" y="340" style_transform_rotation="0">
+			<style name="style_cont" />
+			<lv_image src="star2_icon" />
+			<lv_label text="3.6k" bind_text="subject_stars" />
+			<lv_label text="stars" />
+		</lv_obj>
+	</view>
+</screen>

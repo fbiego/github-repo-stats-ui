@@ -1,0 +1,14 @@
+<component>
+	<styles>
+		<style name="style_main" pad_all="0" width="200" height="200" radius="100" bg_opa="0" border_width="0" />
+	</styles>
+	<api>
+		<prop name="preview" type="image" />
+		<prop name="screen" type="obj" default="null" />
+	</api>
+	<view scroll_one="true">
+		<style name="style_main" />
+		<event_cb callback="view_selected_cb" trigger="clicked" user_data="$screen" />
+		<lv_image src="$preview" />
+	</view>
+</component>

@@ -1,0 +1,122 @@
+<screen>
+	<styles>
+		<style name="style_main" bg_color="0x1e1e1e" />
+		<style name="style_round" width="231" height="231" radius="180" bg_color="0x161616" border_width="30" />
+		<style
+			name="style_cont"
+			layout="flex"
+			flex_flow="column"
+			bg_opa="255"
+			bg_color="0xD9D9D9"
+			border_width="0"
+			height="content"
+			width="content"
+			pad_all="0"
+			pad_row="-17"
+		/>
+		<style
+			name="style_stats"
+			width="content"
+			height="content"
+			pad_all="0"
+			pad_row="0"
+			layout="flex"
+			flex_flow="column"
+			flex_main_place="center"
+			flex_track_place="center"
+			flex_cross_place="center"
+			bg_opa="0"
+			text_font="inter_medium_24"
+			text_color="0xF5F5F5"
+			border_width="0"
+		/>
+		<style
+			name="style_arc"
+			width="466"
+			height="466"
+			transform_pivot_x="233"
+			transform_pivot_y="233"
+			transform_rotation="-900"
+			arc_width="35"
+			arc_color="0xF7504F"
+			radius="5"
+		/>
+		<style
+			name="style_indicator"
+			arc_width="35"
+			arc_color="0xD0CECD"
+			arc_opa="200"
+			arc_rounded="false"
+			border_width="1"
+			border_color="0x000"
+		/>
+		<style
+			name="style_label"
+			text_color="0x000000"
+			text_font="sf_pro_24"
+			bg_color="0xffffff"
+			bg_opa="255"
+			pad_all="5"
+			radius="5"
+			pad_left="10"
+			pad_right="10"
+			pad_top="7"
+		/>
+		<style name="style_knob" bg_opa="0" radius="0" />
+	</styles>
+	<view scrollable="false">
+		<style name="style_main" />
+
+		<lv_obj x="-100" align="left_mid">
+			<style name="style_round" />
+		</lv_obj>
+
+		<lv_obj x="100" align="right_mid">
+			<style name="style_round" />
+		</lv_obj>
+
+		<lv_obj width="147" height="75" align="top_mid" y="80" scrollable="false">
+			<style name="style_cont" />
+			<lv_label bind_text="subject_date" style_text_font="dm_serif_15" style_pad_left="5" />
+			<lv_label text="100" bind_text="subject_time" style_text_font="bodoni_48" style_text_color="0xF7504F" />
+		</lv_obj>
+
+		<lv_image src="github_logo" align="center" y="-10" />
+
+		<lv_obj x="50" align="left_mid">
+			<style name="style_stats" />
+			<lv_image src="merge4_icon" />
+			<lv_label text="100" bind_text="subject_issues" style_text_font="dm_serif_15" />
+		</lv_obj>
+
+		<lv_obj x="-50" align="right_mid">
+			<style name="style_stats" />
+			<lv_image src="pr4_icon" />
+			<lv_label text="100" bind_text="subject_prs" style_text_font="dm_serif_15" />
+		</lv_obj>
+
+		<lv_obj align="bottom_mid" y="-50" style_pad_row="10">
+			<style name="style_stats" />
+			<lv_image src="star4_icon" />
+			<lv_label text="100" bind_text="subject_stars" style_text_font="sf_pro_24" />
+		</lv_obj>
+
+		<lv_label text="Smart Watch App" bind_text="subject_name" y="300" align="top_mid">
+			<style name="style_label" />
+		</lv_label>
+
+		<lv_arc
+			name="stats_arc"
+			bg_start_angle="0"
+			bg_end_angle="360"
+			value="40"
+			mode="reverse"
+			bind_value="subject_issues"
+			clickable="false"
+		>
+			<style name="style_arc" />
+			<style name="style_indicator" selector="indicator" />
+			<style name="style_knob" selector="knob" />
+		</lv_arc>
+	</view>
+</screen>
